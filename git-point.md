@@ -61,12 +61,14 @@ nothing to commit, working tree clean
 →全部のブランチを確認
 ### git branch
 →現在のブランチを確認　✳️が現在の状況  
+```
 例）  
 $ cd hello-santaclaus  
 $ git branch  
 * (HEAD detached at origin/develop)  
   develop  
   main  
+```
 ### git checkout origin/develop
 →ブランチからチェックアウト（切り替え）
 ### git branch -d (btanch.name)
@@ -81,18 +83,22 @@ $ git branch
 ②ファイルの保存先を指定（bitbucketって打ったつもりが  gitbucketになってて死んだ）  
 ③catで対象ファイルを開いて、SSH鍵をbitbucket側に登録  
 ④ssh -T git@bitbucket.org やったらつながってなくて  
+```
 (RSA) to the list of known hosts.  
 git@bitbucket.org: Permission denied (publickey).  
+```
 ⑤vi ~/.ssh/config　やって追記したらいけた
 ### ２つ目のGithubアカウントに対する設定
 （参考：https://qiita.com/Mikenerian/items/481587d4e8d8db9c0382）  
 ①SSH鍵作ってGithubに登録  
 ②SSHが繋がらなくて、configに設定追加  
+```
 vim ~/.ssh/config  
 Host github-sub.com  
   HostName github.com  
   IdentityFile ~/.ssh/github_private  
   User git  
+```
 ③SSH接続を確認  
 ssh -T git@github-sub.com  
 ④リモートの設定を変更でOK!!  
